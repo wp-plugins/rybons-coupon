@@ -206,7 +206,7 @@ class RybonsCoupon_Plugin extends RybonsCoupon_LifeCycle {
         }
 
         if ($this->RybonsCoupon_getFromSession("rybonsCoupon_amt")) {
-            $woocommerce->cart->add_fee(__('Rybons Coupon(' . $woocommerce->session->rybonsCoupon . ')', 'woocommerce'), -$woocommerce->session->rybonsCoupon_amt);
+            $woocommerce->cart->add_fee(__('Rybons Coupon(' . $this->RybonsCoupon_getFromSession("rybonsCouponCode") . ')', 'woocommerce'), -$this->RybonsCoupon_getFromSession("rybonsCoupon_amt"));
         }
     }
 
